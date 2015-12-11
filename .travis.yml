@@ -13,3 +13,6 @@ before_script:
 script:
   - phpunit --coverage-text --coverage-clover=coverage.clover
 
+notifications:
+  email: false
+
