@@ -1,10 +1,7 @@
 # Pinnacle Pineapple
 
-[![Latest Version](https://img.shields.io/github/release/armandsar/pinnacle-pineapple.svg?style=flat-square)](https://github.com/armandsar/pinnacle-pineapple/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/armandsar/pinnacle-pineapple/master.svg?style=flat-square)](https://travis-ci.org/armandsar/pinnacle-pineapple)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/armandsar/pinnacle-pineapple.svg?style=flat-square)](https://scrutinizer-ci.com/g/armandsar/pinnacle-pineapple/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/armandsar/pinnacle-pineapple.svg?style=flat-square)](https://scrutinizer-ci.com/g/armandsar/pinnacle-pineapple)
 [![Total Downloads](https://img.shields.io/packagist/dt/armandsar/pinnacle-pineapple.svg?style=flat-square)](https://packagist.org/packages/armandsar/pinnacle-pineapple)
 
 Simple [pinnacle api](http://www.pinnaclesports.com/en/api/manual) client for Laravel 5.
