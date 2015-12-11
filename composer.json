@@ -1,0 +1,46 @@
+{
+  "name": "armandsar/pinnacle-pineapple",
+  "description": "Api client for pinnaclesports",
+  "keywords": [
+    "armandsar",
+    "api",
+    "pinnacle",
+    "sports",
+    "betting",
+    "tips"
+  ],
+  "homepage": "https://github.com/armandsar/pinnacle-pineapple",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Armands Leinieks",
+      "email": "armands.leinieks@gmail.com",
+      "homepage": "https://sezy.lv",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "illuminate/support": ">=5.1.0",
+    "guzzlehttp/guzzle": "~5.3|~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*",
+    "mockery/mockery": "^0.9.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Armandsar\\PinnaclePineapple\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Armandsar\\PinnaclePineapple\\Test\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1-dev"
+    }
+  }
+}
