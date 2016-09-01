@@ -43,18 +43,9 @@ class PinnacleClient extends BaseApiClient
 
     public function leagues($options = [])
     {
-        $leaguesRaw = $this->get('leagues', 'v1', $options, 'parseXml');
+        $data = $this->get('leagues', 'v2', $options);
 
-        $leagues = [];
-
-        foreach ($leaguesRaw->leagues->league as $value) {
-            $leagues[] = [
-                'id' => (int)$value->attributes()['id'],
-                'league' => (string)$value,
-            ];
-        }
-
-        return $leagues;
+        return $data['leagues'];
     }
 
     public function sports()
