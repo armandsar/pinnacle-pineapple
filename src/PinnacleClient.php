@@ -30,6 +30,17 @@ class PinnacleClient extends BaseApiClient
         return $this->get('fixtures', 'v1', array_merge($default, $options));
     }
 
+    public function specialFixtures($options = [])
+    {
+        $default = [];
+        if (!is_null($this->since)) {
+            $default['since'] = $this->since;
+            $this->since = null;
+        }
+
+        return $this->get('fixtures/special', 'v1', array_merge($default, $options));
+    }
+
     public function settledFixtures($options = [])
     {
         $default = [];
