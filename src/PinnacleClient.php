@@ -16,7 +16,7 @@ class PinnacleClient extends BaseApiClient
     {
         $default = ['oddsFormat' => 'DECIMAL'];
 
-        return $this->get('odds', array_merge($default, $options));
+        return $this->get('odds', 'v1', array_merge($default, $options));
     }
 
     public function fixtures($options = [])
@@ -27,7 +27,7 @@ class PinnacleClient extends BaseApiClient
             $this->since = null;
         }
 
-        return $this->get('fixtures', array_merge($default, $options));
+        return $this->get('fixtures', 'v1', array_merge($default, $options));
     }
 
     public function settledFixtures($options = [])
@@ -38,12 +38,12 @@ class PinnacleClient extends BaseApiClient
             $this->since = null;
         }
 
-        return $this->get('fixtures/settled', array_merge($default, $options));
+        return $this->get('fixtures/settled', 'v1', array_merge($default, $options));
     }
 
     public function leagues($options = [])
     {
-        $leaguesRaw = $this->get('leagues', $options, 'parseXml');
+        $leaguesRaw = $this->get('leagues', 'v1', $options, 'parseXml');
 
         $leagues = [];
 
@@ -59,7 +59,7 @@ class PinnacleClient extends BaseApiClient
 
     public function sports()
     {
-        $sportsRaw = $this->get('sports', [], 'parseXml');
+        $sportsRaw = $this->get('sports', 'v1', [], 'parseXml');
 
         $sports = [];
 

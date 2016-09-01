@@ -11,7 +11,6 @@ abstract class BaseApiClient
     protected $api_password;
 
     protected $baseUrl = 'https://api.pinnaclesports.com';
-    protected $apiVersion = 'v1';
 
     private $client;
 
@@ -22,23 +21,23 @@ abstract class BaseApiClient
         $this->client = $client;
     }
 
-    protected function get($endpoint, $options, $returnAs = 'json')
+    protected function get($endpoint, $apiVersion, $options, $returnAs = 'json')
     {
-        $response = $this->request('GET', $endpoint, $options)->getBody()->getContents();
+        $response = $this->request('GET', $endpoint, $apiVersion, $options)->getBody()->getContents();
         if ($returnAs == 'parseXml') {
             return simplexml_load_string($response);
         }
         return json_decode($response, true);
     }
 
-    private function request($method, $endpoint, $options)
+    private function request($method, $endpoint, $apiVersion, $options)
     {
         $allOptions = [
             'auth' => $this->getAuthData(),
             'query' => $options
         ];
 
-        return $this->client->request($method, $this->buildURL($endpoint), $allOptions);
+        return $this->client->request($method, $this->buildURL($endpoint, $apiVersion), $allOptions);
     }
 
     private function getAuthData()
@@ -46,8 +45,8 @@ abstract class BaseApiClient
         return [$this->api_user, $this->api_password];
     }
 
-    private function buildURL($endpoint)
+    private function buildURL($endpoint, $apiVersion)
     {
-        return $this->baseUrl . '/' . $this->apiVersion . '/' . $endpoint;
+        return $this->baseUrl . '/' . $apiVersion . '/' . $endpoint;
     }
 }
