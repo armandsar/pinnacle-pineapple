@@ -21,7 +21,7 @@ abstract class BaseApiClient
         $this->client = $client;
     }
 
-    protected function get($endpoint, $apiVersion, $options, $returnAs = 'json')
+    protected function get($endpoint, $apiVersion = 'v1', $options = [], $returnAs = 'json')
     {
         $response = $this->request('GET', $endpoint, $apiVersion, $options)->getBody()->getContents();
         if ($returnAs == 'parseXml') {
