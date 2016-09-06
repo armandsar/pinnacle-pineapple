@@ -22,6 +22,13 @@ class PinnacleClient extends BaseApiClient
         return $this->get('odds', 'v1', array_merge($default, $options));
     }
 
+    public function specialOdds($options = [])
+    {
+        $default = ['oddsFormat' => 'DECIMAL'];
+
+        return $this->get('odds/special', 'v1', array_merge($default, $options));
+    }
+
     public function fixtures($options = [])
     {
         $default = [];
