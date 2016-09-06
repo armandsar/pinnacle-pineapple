@@ -8,7 +8,10 @@ class PinnacleClient extends BaseApiClient
 
     public function since($when)
     {
-        $this->since = $when;
+        if ($when) {
+            $this->since = $when;
+        }
+
         return $this;
     }
 
