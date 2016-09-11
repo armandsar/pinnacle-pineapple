@@ -41,9 +41,19 @@ Odds:
 $client->odds($options);
 ```
 
+Special Odds:
+``` php
+$client->specialOdds($options);
+```
+
 Fixtures:
 ``` php
 $client->fixtures($options);
+```
+
+Special Fixtures:
+``` php
+$client->specialFixtures($options);
 ```
 
 Settled fixtures:
@@ -68,9 +78,6 @@ You can also use chainable method since to pass this parameter
 ``` php
 $client->since($when)->odds(['sportId' => 29]);
 ```
-
-
-> Some endpoints are xml and some are json, but the client always return data as array
 
 ## Testing
 
