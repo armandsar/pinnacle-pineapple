@@ -17,47 +17,35 @@ class PinnacleClient extends BaseApiClient
 
     public function odds($options = [])
     {
-        $default = ['oddsFormat' => 'DECIMAL'];
+        $default = $this->useSince(['oddsFormat' => 'DECIMAL']);
 
         return $this->get('odds', 'v1', array_merge($default, $options));
     }
 
     public function specialOdds($options = [])
     {
-        $default = ['oddsFormat' => 'DECIMAL'];
+        $default = $this->useSince(['oddsFormat' => 'DECIMAL']);
 
         return $this->get('odds/special', 'v1', array_merge($default, $options));
     }
 
     public function fixtures($options = [])
     {
-        $default = [];
-        if (!is_null($this->since)) {
-            $default['since'] = $this->since;
-            $this->since = null;
-        }
+        $default = $this->useSince();
 
         return $this->get('fixtures', 'v1', array_merge($default, $options));
     }
 
     public function specialFixtures($options = [])
     {
-        $default = [];
-        if (!is_null($this->since)) {
-            $default['since'] = $this->since;
-            $this->since = null;
-        }
+        $default = $this->useSince();
 
         return $this->get('fixtures/special', 'v1', array_merge($default, $options));
     }
 
     public function settledFixtures($options = [])
     {
-        $default = [];
-        if (!is_null($this->since)) {
-            $default['since'] = $this->since;
-            $this->since = null;
-        }
+        $default = $this->useSince();
 
         return $this->get('fixtures/settled', 'v1', array_merge($default, $options));
     }
@@ -74,6 +62,16 @@ class PinnacleClient extends BaseApiClient
         $data = $this->get('sports', 'v2');
 
         return $data['sports'];
+    }
+    
+    private function useSince($default = [])
+    {
+        if (!is_null($this->since)) {
+            $default['since'] = $this->since;
+            $this->since = null;
+            return $default;
+        }
+        return $default;
     }
 
 }
