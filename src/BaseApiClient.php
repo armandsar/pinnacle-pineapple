@@ -10,7 +10,7 @@ abstract class BaseApiClient
     protected $api_user;
     protected $api_password;
 
-    protected $baseUrl = 'https://api.pinnaclesports.com';
+    protected $baseUrl = 'https://api.pinnacle.com';
 
     private $client;
 
