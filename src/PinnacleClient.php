@@ -63,6 +63,13 @@ class PinnacleClient extends BaseApiClient
 
         return $data['sports'];
     }
+
+    public function inrunnings()
+    {
+        $data = $this->get('inrunning', 'v1');
+
+        return $data['sports'];
+    }
     
     private function useSince($default = [])
     {
