@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/armandsar/pinnacle-pineapple/master.svg?style=flat-square)](https://travis-ci.org/armandsar/pinnacle-pineapple)
 [![Total Downloads](https://img.shields.io/packagist/dt/armandsar/pinnacle-pineapple.svg?style=flat-square)](https://packagist.org/packages/armandsar/pinnacle-pineapple)
 
-Simple [pinnacle api](http://www.pinnaclesports.com/en/api/manual) client for Laravel 5.
+Simple [pinnacle api](https://pinnacleapi.github.io/) client for Laravel 5.
 
 ## Install
 
